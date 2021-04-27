@@ -102,40 +102,37 @@ namespace Steve
                 public void DrawArea(Quad Area)
                 {
 
-                    //clear colours to default
-                    System.Console.BackgroundColor = ConsoleColor.Black;
-                    System.Console.ForegroundColor = ConsoleColor.White;
-
-                    //for each character in the screen
-                    for (int y = (int)Area.Y; y < ((int)Area.Y + (int)Area.H) - 1; y++)
-                    {
-                        for (int x = (int)Area.X; x < ((int)Area.X + (int)Area.W) - 1; x++)
-                        {
-                            //clear colours to default
-                            System.Console.BackgroundColor = ConsoleColor.Black;
-                            System.Console.ForegroundColor = ConsoleColor.White;
-                            try
+                            //for each character in the screen
+                            for (int y = (int)Area.Y; y < ((int)Area.Y + (int)Area.H) - 1; y++)
                             {
-                                //Set cursor to position
-                                System.Console.SetCursorPosition(x, y);
+                                for (int x = (int)Area.X; x < ((int)Area.X + (int)Area.W) - 1; x++)
+                                {
+                                    //clear colours to default
+                                    System.Console.BackgroundColor = ConsoleColor.Black;
+                                    System.Console.ForegroundColor = ConsoleColor.White;
+                                    try
+                                    {
+                                        //Set cursor to position
+                                        System.Console.SetCursorPosition(x, y);
 
-                                //set colour to character colour
-                                System.Console.BackgroundColor = Screen[x, y].Background;
-                                System.Console.ForegroundColor = Screen[x, y].Forground;
+                                        //set colour to character colour
+                                        System.Console.BackgroundColor = Screen[x, y].Background;
+                                        System.Console.ForegroundColor = Screen[x, y].Forground;
 
-                                //write character
-                                System.Console.Write(Screen[x, y].Character);
+                                        //write character
+                                        System.Console.Write(Screen[x, y].Character);
 
-                                 //doesnt need to be redrawn next frame until a change is made
-                                 Screen[x, y].Update = false;
-                            } catch
-                            {
-                                break;
+                                         //doesnt need to be redrawn next frame until a change is made
+                                         Screen[x, y].Update = false;
+                                    } catch
+                                    {
+                                        break;
+                                    }
+                                }
                             }
+                            
                         }
-                    }
-                }
-
+                    
                 //called every frame to draw the screen
                 public void Draw()
                 {
@@ -243,17 +240,24 @@ namespace Steve
             ConsoleOutput.Screen[0, 10].Character = 'O';
             ConsoleOutput.Screen[0, 10].Background = ConsoleColor.Red;
             ConsoleOutput.Screen[0, 10].Forground = ConsoleColor.Yellow;
+            Graphics.Vector2 Velocity = new Graphics.Vector2(1, 1);
             while (true)
             {
                 ConsoleOutput.Draw();
                 h.Update = false;
                 ConsoleOutput.Screen[0, 10].Update = true;
-                h.ChangePosition(new Graphics.Vector2(1, -1));
-                for (int i = 0; i < 10; i++)
+                h.ChangePosition(Velocity);
+
+                if(h.Position.X < 0 || h.Position.X >= Size.X - 14)
                 {
-                    ConsoleOutput.Screen[12, i].Update = true;
+                    Velocity.X *= -1;
                 }
-                System.Threading.Thread.Sleep(1);
+
+                if (h.Position.Y < 0 || h.Position.Y >= Size.Y - 4)
+                {
+                    Velocity.Y *= -1;
+                }
+                System.Threading.Thread.Sleep(10);
             }
         }
     }
