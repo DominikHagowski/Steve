@@ -170,7 +170,13 @@ namespace Steve
                                 for (int i = 0; i < Lines.Length; i++)
                                 {
                                     System.Console.SetCursorPosition((int)S.Position.X, (int)S.Position.Y + i);
-                                    System.Console.Write(Lines[i]);
+                                    if (Lines[i].Length + S.Position.X >= ScreenSize.X - 1 || Lines.Length + S.Position.Y >= ScreenSize.Y - 1)
+                                    {
+
+                                    } else
+                                    {
+                                        System.Console.Write(Lines[i]);
+                                    }
                                 }
                             }
                             catch
