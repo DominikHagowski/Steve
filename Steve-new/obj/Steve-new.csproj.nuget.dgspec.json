@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-new\\Steve-new.csproj": {}
+    "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-master\\Steve-new\\Steve-new.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-new\\Steve-new.csproj": {
+    "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-master\\Steve-new\\Steve-new.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-new\\Steve-new.csproj",
+        "projectUniqueName": "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-master\\Steve-new\\Steve-new.csproj",
         "projectName": "Steve-new",
-        "projectPath": "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-new\\Steve-new.csproj",
+        "projectPath": "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-master\\Steve-new\\Steve-new.csproj",
         "packagesPath": "C:\\Users\\hag19002983\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-new\\obj\\",
+        "outputPath": "C:\\Users\\hag19002983\\OneDrive - Wakefield College\\Steve-master\\Steve-new\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
